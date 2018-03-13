@@ -1,5 +1,5 @@
         {
-            "name": "libretro-mgba",
+            "name": "libretro-handy",
             "no-autogen": true,
             "make-args": [
                 "prefix=/app",
@@ -11,17 +11,17 @@
             ],
             "post-install": [
                 "mkdir -p /app/lib/libretro/",
-                "install -m644 -p mgba.libretro /app/lib/libretro/"
+                "install -m644 -p handy.libretro /app/lib/libretro/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/mgba/archive/b3c4ab2cf66302b0ba4e97d2c5848ad436c277ad.zip",
-                    "sha256": "6c6e9c6021544f61289defd2f555e8b9c8f25ee98e79ef44a14c975227894a1e"
+                    "url": "https://github.com/libretro/libretro-handy/archive/a3d88fede0b2850a242da818d3392a637ce2355f.zip",
+                    "sha256": "8bf3c57d5e53701ef57bf63716ed6362a402193e2ef71d4db49339d4898f3746"
                 },
                 {
                     "type": "file",
-                    "path": "mgba.libretro"
+                    "path": "handy.libretro"
                 }
             ]
         }

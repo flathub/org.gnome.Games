@@ -17,8 +17,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/nestopia/archive/3eacbb2371b1c28ac98f1b482b409421c6c3fd06.zip",
-                    "sha256": "4438e9118b4401ad041e26b032cb61467c446ca456813c6d6f8b7ba1953b25fa"
+                    "url": "https://github.com/libretro/nestopia/archive/5ecea4402cb6722405afb5fd23db8de411122eb5.zip",
+                    "sha256": "a4ff45ea09f3c7e5ec289f82cedf02e0dcedd479f310050ab88835dbdf6239c8"
                 },
                 {
                     "type": "file",

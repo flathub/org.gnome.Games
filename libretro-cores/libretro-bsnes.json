@@ -18,8 +18,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/bsnes-libretro/archive/263e94f93da9d790e101d79ab8d938f5a1c91a67.zip",
-                    "sha256": "7d1fb5bab77b0ddbff52968d2cf6357a4bd1ae01006b308ca794d0a4bcb474ea"
+                    "url": "https://github.com/libretro/bsnes-libretro/archive/4e572a3cfa10e56bedb6737b0494e8165f6490d5.zip",
+                    "sha256": "111df6daa446ccfd7862c3286dbdaa984d179f227d0945d950141f10bf9dbde0"
                 },
                 {
                     "type": "file",

@@ -17,8 +17,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/pcsx_rearmed/archive/09d454e73bc251b44848abba4026efcd452df752.zip",
-                    "sha256": "c7fddc7aa06c9bb46a6380ff2fd1e79462c51d1e78514fa7f66d32d11175e4ce"
+                    "url": "https://github.com/libretro/pcsx_rearmed/archive/ea4f4384c24996e839106d515f000269b5cfc792.zip",
+                    "sha256": "9999fcff8644ba87b48ebc691e2d0dcc1c34aee1268426c90e0293d6306d5e4c"
                 },
                 {
                     "type": "file",
