@@ -128,8 +128,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/retro-gtk/0.14/retro-gtk-0.14.0.tar.xz",
-                    "sha256": "0a85cfaa2e61444871e2405fd1cae3a1339fa0b327507072f5d940fc06a4b1cb"
+                    "url": "https://download.gnome.org/sources/retro-gtk/0.12/retro-gtk-0.12.1.tar.xz",
+                    "sha256": "daadab43c8189d92be5832e2cfbf1afdfa6ad3201933cc946a2d6761bfd5b166"
                 }
             ]
         },
