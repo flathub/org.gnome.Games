@@ -1,5 +1,5 @@
         {
-            "name": "libretro-mgba",
+            "name": "libretro-prosystem",
             "no-autogen": true,
             "make-args": [
                 "prefix=/app",
@@ -11,17 +11,17 @@
             ],
             "post-install": [
                 "mkdir -p /app/lib/libretro/",
-                "install -m644 -p mgba.libretro /app/lib/libretro/"
+                "install -m644 -p prosystem.libretro /app/lib/libretro/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/mgba/archive/b3c4ab2cf66302b0ba4e97d2c5848ad436c277ad.zip",
-                    "sha256": "6c6e9c6021544f61289defd2f555e8b9c8f25ee98e79ef44a14c975227894a1e"
+                    "url": "https://github.com/libretro/prosystem-libretro/archive/71a2d1d1aa9ef836d9a6b7f876303e98aff7adea.zip",
+                    "sha256": "70daea4bacbb0fb614bee8b2d90f3b0d7b6f776febd85fb95d8d58e80432142c"
                 },
                 {
                     "type": "file",
-                    "path": "mgba.libretro"
+                    "path": "prosystem.libretro"
                 }
             ]
         }

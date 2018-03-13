@@ -1,0 +1,17 @@
+[Libretro]
+Type=Emulator
+Version=1.0
+Name=ProSystem
+Module=prosystem_libretro.so
+LibretroVersion=1
+Authors=Greg Stanton;Brian Berlin;Leonis;Greg DeMent;
+License=GPL-2.0+;
+
+[Platform:Atari7800]
+MimeType=application/x-atari-7800-rom;
+Firmwares=Atari7800;
+
+[Firmware:Atari7800]
+Path=7800 BIOS (U).rom
+MD5=0763f1ffb006ddbe32e52d497ee848ae
+Mandatory=false
