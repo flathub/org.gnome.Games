@@ -1,0 +1,16 @@
+        {
+            "name": "mime-types",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir -p /app/share/mime/packages/",
+                "install -m644 -p -t /app/share/mime/packages *",
+                "update-mime-database /app/share/mime"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://bitbucket.org/rude/love/raw/2d2afd350c09b9a42f3d537763df3fc3a6423b71/platform/unix/love.xml",
+                    "sha256": "5b72ae3818ada71ec7fd69c2a27126dc5c759257e1ff203639655c389a24ccb1"
+                }
+            ]
+        }

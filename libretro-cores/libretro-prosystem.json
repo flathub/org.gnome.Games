@@ -16,8 +16,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/prosystem-libretro/archive/71a2d1d1aa9ef836d9a6b7f876303e98aff7adea.zip",
-                    "sha256": "70daea4bacbb0fb614bee8b2d90f3b0d7b6f776febd85fb95d8d58e80432142c"
+                    "url": "https://github.com/libretro/prosystem-libretro/archive/463dfff97f2e7d707ee5ae238cb2e8e70beb585a.zip",
+                    "sha256": "cac7247080d7816881a1797eda27c0eaec3524191e8cc8b59665f726845954a0"
                 },
                 {
                     "type": "file",

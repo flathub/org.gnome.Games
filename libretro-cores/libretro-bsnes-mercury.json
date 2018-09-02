@@ -1,5 +1,5 @@
         {
-            "name": "libretro-bsnes",
+            "name": "libretro-bsnes-mercury",
             "no-autogen": true,
             "make-args": [
                 "prefix=/app",
@@ -13,17 +13,17 @@
             ],
             "post-install": [
                 "mkdir -p /app/lib/libretro/",
-                "install -m644 -p bsnes_balanced.libretro /app/lib/libretro/"
+                "install -m644 -p bsnes_mercury_balanced.libretro /app/lib/libretro/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/bsnes-libretro/archive/4e572a3cfa10e56bedb6737b0494e8165f6490d5.zip",
-                    "sha256": "111df6daa446ccfd7862c3286dbdaa984d179f227d0945d950141f10bf9dbde0"
+                    "url": "https://github.com/libretro/bsnes-mercury/archive/4e221df676ffc7b46d083cf2ae100131eabe5076.zip",
+                    "sha256": "a50f8b7bec5684239bf9ef855a80df9c2eec24dcff09590467ee8af7ba0b3529"
                 },
                 {
                     "type": "file",
-                    "path": "bsnes_balanced.libretro"
+                    "path": "bsnes_mercury_balanced.libretro"
                 }
             ]
         }

@@ -16,8 +16,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/stella-libretro/archive/3a79356c82bbeb0d70ba1470f2d46de985448010.zip",
-                    "sha256": "11ba6533736b3c3d55549c22eae4d23e313a26434afce290aebe41824db91d50"
+                    "url": "https://github.com/libretro/stella-libretro/archive/b0d525b724fa0a9a313e2ea33a590aba98deaabf.zip",
+                    "sha256": "6561074f73b44e73739b6cfefe052789ba9f5fd2b45b2e672d32fddcd0acf28d"
                 },
                 {
                     "type": "file",

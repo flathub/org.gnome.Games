@@ -16,8 +16,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/mgba/archive/b3c4ab2cf66302b0ba4e97d2c5848ad436c277ad.zip",
-                    "sha256": "6c6e9c6021544f61289defd2f555e8b9c8f25ee98e79ef44a14c975227894a1e"
+                    "url": "https://github.com/libretro/mgba/archive/abf712f061c816c96e028b878a2e12dc49426088.zip",
+                    "sha256": "8e506bbb8adc08b4affddefc8e3223da6592a0f2d2762a20fba79c09dfb36ea1"
                 },
                 {
                     "type": "file",
