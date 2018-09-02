@@ -16,8 +16,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/libretro-handy/archive/a3d88fede0b2850a242da818d3392a637ce2355f.zip",
-                    "sha256": "8bf3c57d5e53701ef57bf63716ed6362a402193e2ef71d4db49339d4898f3746"
+                    "url": "https://github.com/libretro/libretro-handy/archive/debca1e6cf5dcd891b72db463c3ce878a64037b5.zip",
+                    "sha256": "87f26eb30c3a48baf33e3e8c99d86d32ae2b0e9a198d767a95741fb7c75eff72"
                 },
                 {
                     "type": "file",

@@ -16,8 +16,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/beetle-ngp-libretro/archive/9e33e1b9c32c98b96010691740c089508afe0167.zip",
-                    "sha256": "b9453f740dd509017bb862b0c201bba72f9d03a41cbb3011a58ade82e5ad88a1"
+                    "url": "https://github.com/libretro/beetle-ngp-libretro/archive/69293c940ca27008ab2a1e37cc3077c677b36d1e.zip",
+                    "sha256": "e757c1d7bb7a464ef2e744eb966e48f52eaf13edf6241dd96b9af421afad967d"
                 },
                 {
                     "type": "file",

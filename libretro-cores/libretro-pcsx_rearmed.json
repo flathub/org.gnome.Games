@@ -1,5 +1,8 @@
         {
             "name": "libretro-pcsx_rearmed",
+            "skip-arches": [
+                "arm"
+            ],
             "no-autogen": true,
             "rm-configure": true,
             "make-args": [
@@ -17,8 +20,12 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/pcsx_rearmed/archive/ea4f4384c24996e839106d515f000269b5cfc792.zip",
-                    "sha256": "9999fcff8644ba87b48ebc691e2d0dcc1c34aee1268426c90e0293d6306d5e4c"
+                    "url": "https://github.com/libretro/pcsx_rearmed/archive/b6169792c70a5ebb2e4baef63af5dc375be89770.zip",
+                    "sha256": "583e4a23cd2a54ee8bb36711d33d7dc04ab4a0e5f0b463c328c78752cf9bde0f"
+                },
+                {
+                    "type": "patch",
+                    "path": "pcsx_rearmed-Remove-reset-in-retro_run-hack.patch"
                 },
                 {
                     "type": "file",

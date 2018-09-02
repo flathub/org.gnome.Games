@@ -1,6 +1,11 @@
         {
-            "name": "libretro-mednafen_pce_fast",
+            "name": "libretro-desmume2015",
+            "skip-arches": [
+                "aarch64",
+                "arm"
+            ],
             "no-autogen": true,
+            "subdir": "desmume",
             "make-args": [
                 "prefix=/app",
                 "core_installdir=/app/lib/libretro"
@@ -11,17 +16,18 @@
             ],
             "post-install": [
                 "mkdir -p /app/lib/libretro/",
-                "install -m644 -p mednafen_pce_fast.libretro /app/lib/libretro/"
+                "install -m644 -p desmume2015.libretro /app/lib/libretro/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/beetle-pce-fast-libretro/archive/6dfaf04cf2085ab9e5bb6ffac75070816cb4ff52.zip",
-                    "sha256": "4075c8f0dcc89b3836b33db3d687b27bcd4951aff0f061fd652157c09f18d420"
+                    "url": "https://github.com/libretro/desmume2015/archive/5957aa07b1b8b60142cdcaccffa827316dc548d5.zip",
+                    "sha256": "71e7116b8be6766c6eb4ed35af574e29e0eda0b038de233b57f2009e9ee9d750"
                 },
                 {
                     "type": "file",
-                    "path": "mednafen_pce_fast.libretro"
+                    "path": "desmume2015.libretro",
+                    "dest-filename": "desmume/desmume2015.libretro"
                 }
             ]
         }

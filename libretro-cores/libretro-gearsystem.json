@@ -1,0 +1,18 @@
+        {
+            "name": "libretro-gearsystem",
+            "no-autogen": true,
+            "subdir": "platforms/libretro",
+            "make-args": [
+                "prefix=/app"
+            ],
+            "make-install-args": [
+                "prefix=/app"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/drhelius/Gearsystem/archive/99c8a84b916042c3c2eceda515e602a390a2cb01.zip",
+                    "sha256": "7adc96bc0bd37b15695bd9cf9c970c5b62a2a09e2481886ad7aef1967320887c"
+                }
+            ]
+        }

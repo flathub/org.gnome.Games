@@ -1,10 +1,10 @@
 [Libretro]
 Type=Emulator
 Version=1.0
-Name=bsnes Balanced
-Module=bsnes_balanced_libretro.so
+Name=bsnes-mercury Balanced
+Module=bsnes_mercury_balanced_libretro.so
 LibretroVersion=1
-Authors=byuu;
+Authors=byuu;Alcaro;
 License=GPL-3.0;
 
 [Platform:SuperNintendoEntertainmentSystem]

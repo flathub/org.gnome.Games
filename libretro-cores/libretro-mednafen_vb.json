@@ -1,5 +1,5 @@
         {
-            "name": "libretro-mednafen_pce_fast",
+            "name": "libretro-mednafen_vb",
             "no-autogen": true,
             "make-args": [
                 "prefix=/app",
@@ -11,17 +11,17 @@
             ],
             "post-install": [
                 "mkdir -p /app/lib/libretro/",
-                "install -m644 -p mednafen_pce_fast.libretro /app/lib/libretro/"
+                "install -m644 -p mednafen_vb.libretro /app/lib/libretro/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/libretro/beetle-pce-fast-libretro/archive/6dfaf04cf2085ab9e5bb6ffac75070816cb4ff52.zip",
-                    "sha256": "4075c8f0dcc89b3836b33db3d687b27bcd4951aff0f061fd652157c09f18d420"
+                    "url": "https://github.com/libretro/beetle-vb-libretro/archive/cc11960675aaef4bb9c8e50b8ada6c81d9044d96.zip",
+                    "sha256": "8ae0552f412ce3a3644fed70aa3a93815dba63694fde0865a34efdd4eb3c0fcf"
                 },
                 {
                     "type": "file",
-                    "path": "mednafen_pce_fast.libretro"
+                    "path": "mednafen_vb.libretro"
                 }
             ]
         }

@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.Games",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.28",
+    "runtime-version" : "3.30",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-games",
     "finish-args" : [
@@ -28,8 +28,12 @@
         "--share=network",
         /* Needed for joypads, until we have a proper portal */
         "--device=all",
+        /* Needed to be able to run desktop and Steam games */
+        "--talk-name=org.freedesktop.Flatpak",
         /* Needed to find the ROMs */
-        "--filesystem=home:ro"
+        "--filesystem=home:ro",
+        /* Needed to find flatpaked Steam games */
+        "--filesystem=~/.var/app/com.valvesoftware.Steam:ro"
     ],
     "build-options" : {
         "cflags" : "-O2 -g",
@@ -55,11 +59,14 @@
 
            We build them first, because some of them are very big, and they
            change more rarely than the rest of the modules. */
-        "libretro-cores/libretro-bsnes.json",
+        "libretro-cores/libretro-bsnes-mercury.json",
+        "libretro-cores/libretro-desmume2015.json",
         "libretro-cores/libretro-gambatte.json",
+        "libretro-cores/libretro-gearsystem.json",
         "libretro-cores/libretro-handy.json",
         "libretro-cores/libretro-mednafen_ngp.json",
         "libretro-cores/libretro-mednafen_pce_fast.json",
+        "libretro-cores/libretro-mednafen_vb.json",
         "libretro-cores/libretro-mednafen_wswan.json",
         "libretro-cores/libretro-mgba.json",
         "libretro-cores/libretro-nestopia.json",
@@ -84,24 +91,25 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/tracker/2.0/tracker-2.0.3.tar.xz",
-                    "sha256" : "5a2fb274c128ec67a920944937b5147ceaf5db16fef6691ea22c4cb841e20580"
+                    "url" : "https://download.gnome.org/sources/tracker/2.1/tracker-2.1.3.tar.xz",
+                    "sha256" : "42449bcfc9707b82b75f22a5d3a1154d0062411cbcb222d4f463372fecadf101"
                 }
             ]
         },
         {
             "name" : "grilo",
+            "buildsystem" : "meson",
             "config-opts" : [
-                "--enable-grl-net",
-                "--disable-grl-pls",
-                "--disable-gtk-doc",
-                "--disable-static"
+                "-Denable-grl-net=true",
+                "-Denable-grl-pls=false",
+                "-Denable-gtk-doc=false",
+                "-Denable-static=false"
             ],
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/grilo/0.3/grilo-0.3.4.tar.xz",
-                    "sha256" : "7c6964053b42574c2f14715d2392a02ea5cbace955eb73e067c77aa3e43b066e"
+                    "url" : "https://download.gnome.org/sources/grilo/0.3/grilo-0.3.6.tar.xz",
+                    "sha256" : "1e65ca82dd58020451417fde79310d4b940adc3f63ab59997419c52ed3bc9c91"
                 }
             ],
             "cleanup" : [
@@ -112,39 +120,45 @@
         /* XXX Remove the Lua sources we won't use */
         {
             "name" : "grilo-plugins",
+            "buildsystem" : "meson",
             "config-opts" : [
-                "--disable-goa",
-                "--disable-filesystem",
-                "--disable-optical-media",
-                "--disable-youtube",
-                "--disable-bookmarks",
-                "--disable-metadata-store",
-                "--disable-vimeo",
-                "--disable-tracker",
-                "--disable-localmetadata",
-                "--disable-dleyna",
-                "--disable-thetvdb",
-                "--disable-tmdb",
-                "--disable-freebox",
-                "--disable-opensubtitles",
-                "--disable-gravatar",
-                "--disable-jamendo",
-                "--disable-raitv",
-                "--disable-magnatune",
-                "--disable-shoutcast",
-                "--enable-lua-factory"
+                "-Denable-goa=no",
+                "-Denable-filesystem=no",
+                "-Denable-optical-media=no",
+                "-Denable-youtube=no",
+                "-Denable-bookmarks=no",
+                "-Denable-metadata-store=no",
+                "-Denable-vimeo=no",
+                "-Denable-tracker=no",
+                "-Denable-local-metadata=no",
+                "-Denable-dleyna=no",
+                "-Denable-thetvdb=no",
+                "-Denable-tmdb=no",
+                "-Denable-freebox=no",
+                "-Denable-opensubtitles=no",
+                "-Denable-gravatar=no",
+                "-Denable-jamendo=no",
+                "-Denable-raitv=no",
+                "-Denable-magnatune=no",
+                "-Denable-shoutcast=no",
+                "-Denable-dmap=no",
+                "-Denable-flickr=no",
+                "-Denable-podcasts=no",
+                "-Denable-chromaprint=no",
+                "-Denable-lua-factory=yes"
             ],
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/grilo-plugins/0.3/grilo-plugins-0.3.5.tar.xz",
-                    "sha256" : "2977827b8ecb3e15535236180e57dc35e85058d111349bdb6a1597e62a5068fb"
+                    "url" : "https://download.gnome.org/sources/grilo-plugins/0.3/grilo-plugins-0.3.7.tar.xz",
+                    "sha256" : "fc2f3bbc319136e53e1efb6659fa65b6af45db114b6621008f9abba64fad6820"
                 }
             ],
             "cleanup" : [
                 "/include"
             ]
         },
+        "mime/mime.json",
         {
             "name" : "libevdev",
             "sources" : [
@@ -161,8 +175,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/libmanette/0.2/libmanette-0.2.0.tar.xz",
-                    "sha256" : "af9e59b8d9ab792391a229c2824cac99740676785fdd460588fe9f5a05e613ff"
+                    "url" : "https://download.gnome.org/sources/libmanette/0.2/libmanette-0.2.1.tar.xz",
+                    "sha256" : "023508e8cbae3c24697a6145aea6a0ba888e0a920fe8ee87f7231972c1f87893"
                 }
             ]
         },
@@ -172,21 +186,22 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/retro-gtk/0.14/retro-gtk-0.14.0.tar.xz",
-                    "sha256" : "0a85cfaa2e61444871e2405fd1cae3a1339fa0b327507072f5d940fc06a4b1cb"
+                    "url" : "https://download.gnome.org/sources/retro-gtk/0.16/retro-gtk-0.16.0.tar.xz",
+                    "sha256" : "8c9b4ec9d6aa6b9db088a09706c0dd3de41437ff3a46f46566a47911efa7a627"
                 }
             ]
         },
         {
             "name" : "gnome-games",
+            "buildsystem" : "meson",
             "post-install" : [
                 "mkdir -p /app/lib/libretro/extra.d"
             ],
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/gnome-games/3.28/gnome-games-3.28.0.tar.xz",
-                    "sha256" : "64689b7b916345a790f3599b9127206ae055983a90c25bd1356e8827834ea200"
+                    "url" : "https://download.gnome.org/sources/gnome-games/3.30/gnome-games-3.30.0.tar.xz",
+                    "sha256" : "1c460a414ce9b739f2cdcafc4486987ba3f1052df17071a0566b7a73685df230"
                 }
             ]
         }
