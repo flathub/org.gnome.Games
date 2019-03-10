@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.Games",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.30",
+    "runtime-version" : "3.32",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-games",
     "finish-args" : [
@@ -19,6 +19,7 @@
         "--socket=pulseaudio",
         /* Tracker access */
         "--talk-name=org.freedesktop.Tracker1",
+        "--env=TRACKER_SPARQL_BACKEND=bus",
         /* Needed for dconf to work */
         "--filesystem=xdg-run/dconf",
         "--filesystem=~/.config/dconf:ro",
@@ -31,7 +32,7 @@
         /* Needed to be able to run desktop and Steam games */
         "--talk-name=org.freedesktop.Flatpak",
         /* Needed to find the ROMs */
-        "--filesystem=home:ro",
+        "--filesystem=host:ro",
         /* Needed to find flatpaked Steam games */
         "--filesystem=~/.var/app/com.valvesoftware.Steam:ro"
     ],
@@ -73,22 +74,24 @@
         "shared-modules/lua5.3/lua-5.3.2.json",
         {
             "name" : "tracker",
+            "buildsystem" : "meson",
             "config-opts" : [
-                "--disable-miner-apps",
-                "--disable-static",
-                "--disable-tracker-extract",
-                "--disable-tracker-needle",
-                "--disable-tracker-preferences",
-                "--disable-artwork",
-                "--disable-tracker-writeback",
-                "--disable-miner-user-guides",
-                "--with-bash-completion-dir=no"
+                "-Ddocs=false",
+                "-Dfts=false",
+                "-Dfunctional_tests=false",
+                "-Djournal=false",
+                "-Dnetwork_manager=disabled",
+                "-Dstemmer=disabled",
+                "-Dbash_completion=no",
+                "-Ddbus_services=/app/share/dbus-1/services",
+                "-Dsystemd_user_services=no"
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/tracker/2.1/tracker-2.1.5.tar.xz",
-                    "sha256" : "b234b7573773b904dc3e885ff5ec44e86b035767cde783bc50d65d12cd72861e"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/tracker.git",
+                    "tag" : "2.2.1",
+                    "commit" : "c09ac0beda85498b365a89863a2cfb25b490202a"
                 }
             ]
         },
@@ -103,9 +106,10 @@
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/grilo/0.3/grilo-0.3.6.tar.xz",
-                    "sha256" : "1e65ca82dd58020451417fde79310d4b940adc3f63ab59997419c52ed3bc9c91"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/grilo.git",
+                    "tag" : "grilo-0.3.7",
+                    "commit" : "019a838f7752b42d9766e0f2f898ae0315666c3a"
                 }
             ],
             "cleanup" : [
@@ -145,9 +149,10 @@
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/grilo-plugins/0.3/grilo-plugins-0.3.8.tar.xz",
-                    "sha256" : "4cdd770b1554ee49cf77705401a35daa3ebff81badc05bd69d7240f50e60d65b"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/grilo-plugins.git",
+                    "tag" : "grilo-plugins-0.3.8",
+                    "commit" : "29dc976e010bfff6d0bfd92aae886944e8e708b8"
                 }
             ],
             "cleanup" : [
@@ -159,9 +164,27 @@
             "name" : "libevdev",
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://www.freedesktop.org/software/libevdev/libevdev-1.5.9.tar.xz",
-                    "sha256" : "e1663751443bed9d3e76a4fe2caf6fa866a79705d91cacad815c04e706198a75"
+                    "type" : "git",
+                    "url" : "https://gitlab.freedesktop.org/libevdev/libevdev.git",
+                    "tag" : "libevdev-1.6.0",
+                    "commit" : "f293c11fecd2d786f7742cb6768863d498b9d31b"
+                }
+            ]
+        },
+        {
+            "name" : "libhandy",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dtests=false",
+                "-Dexamples=false",
+                "-Dglade_catalog=disabled"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://source.puri.sm/Librem5/libhandy.git",
+                    "tag" : "v0.0.9",
+                    "commit" : "56b0aa62f6251ee19a88fc208b7ca8dcf9c9633c"
                 }
             ]
         },
@@ -170,9 +193,10 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/libmanette/0.2/libmanette-0.2.1.tar.xz",
-                    "sha256" : "023508e8cbae3c24697a6145aea6a0ba888e0a920fe8ee87f7231972c1f87893"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/aplazas/libmanette.git",
+                    "tag" : "0.2.2",
+                    "commit" : "282927b98da8547e1ffb707874c8d368d2b9c0df"
                 }
             ]
         },
@@ -181,9 +205,10 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/retro-gtk/0.16/retro-gtk-0.16.0.tar.xz",
-                    "sha256" : "8c9b4ec9d6aa6b9db088a09706c0dd3de41437ff3a46f46566a47911efa7a627"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/retro-gtk.git",
+                    "tag" : "0.16.1",
+                    "commit" : "8053f95f24611b13ccbb3c6378d379747e43fcb1"
                 }
             ]
         },
@@ -195,9 +220,10 @@
             ],
             "sources" : [
                 {
-                    "type" : "archive",
-                    "url" : "https://download.gnome.org/sources/gnome-games/3.30/gnome-games-3.30.2.tar.xz",
-                    "sha256" : "5607c4071d3b07809ec1a88deb52bb289c29b2f5fb91374e244ebe7f8dee31a1"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gnome-games.git",
+                    "tag" : "3.32.0",
+                    "commit" : "51f0f3245c7de1ec0f8b276625856e7f9a2ee5ae"
                 }
             ]
         }

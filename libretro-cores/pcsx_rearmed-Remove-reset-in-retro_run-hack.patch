@@ -1,4 +1,4 @@
-From 24c756314d63a5653b36df88563d316f5ed6c9b7 Mon Sep 17 00:00:00 2001
+From 18f10980179849733f42442e6156e3e7563008a5 Mon Sep 17 00:00:00 2001
 From: Adrien Plazas <kekun.plazas@laposte.net>
 Date: Fri, 10 Mar 2017 07:24:33 +0100
 Subject: [PATCH] libretro: Remove reset in retro_run() hack
@@ -7,14 +7,36 @@ Removes a hack breaking deserialization when running retro_reset(),
 retro_unserialize() and retro_run() in this order, as it silently resets
 the core just after setting its state.
 ---
- frontend/libretro.c | 9 +--------
- 1 file changed, 1 insertion(+), 8 deletions(-)
+ frontend/libretro.c | 21 ++-------------------
+ 1 file changed, 2 insertions(+), 19 deletions(-)
 
 diff --git a/frontend/libretro.c b/frontend/libretro.c
-index 708e497..a84b891 100644
+index 89b5ae2..56e1c94 100644
 --- a/frontend/libretro.c
 +++ b/frontend/libretro.c
-@@ -1299,9 +1299,7 @@ size_t retro_get_memory_size(unsigned id)
+@@ -50,9 +50,6 @@
+ 
+ #define ISHEXDEC ((buf[cursor]>='0') && (buf[cursor]<='9')) || ((buf[cursor]>='a') && (buf[cursor]<='f')) || ((buf[cursor]>='A') && (buf[cursor]<='F'))
+ 
+-//hack to prevent retroarch freezing when reseting in the menu but not while running with the hot key
+-static int rebootemu = 0;
+-
+ static retro_video_refresh_t video_cb;
+ static retro_input_poll_t input_poll_cb;
+ static retro_input_state_t input_state_cb;
+@@ -1296,10 +1293,7 @@ bool retro_load_game(const struct retro_game_info *info)
+ 		return false;
+ 	}
+ 
+-	/* TODO: Calling SysReset() outside retro_run for some system
+-	 * causes RetroArch to freeze, e.g Ludo */
+-	//SysReset();
+-	rebootemu = 1;
++	SysReset();
+ 
+ 	if (LoadCdrom() == -1) {
+ 		log_cb(RETRO_LOG_INFO, "could not load CD\n");
+@@ -1342,9 +1336,7 @@ size_t retro_get_memory_size(unsigned id)
  
  void retro_reset(void)
  {
@@ -25,18 +47,22 @@ index 708e497..a84b891 100644
  }
  
  static const unsigned short retro_psx_map[] = {
-@@ -1535,11 +1533,6 @@ static void update_variables(bool in_flight)
+@@ -1641,15 +1633,6 @@ static uint16_t get_analog_button(retro_input_state_t input_state_cb, int player
  void retro_run(void)
  {
-     int i;
--    //SysReset must be run while core is running,Not in menu (Locks up Retroarch)
--    if(rebootemu != 0){
--      rebootemu = 0;
--      SysReset();
--    }
+ 	int i;
+-	//SysReset must be run while core is running,Not in menu (Locks up Retroarch)
+-	if (rebootemu != 0) {
+-		rebootemu = 0;
+-		SysReset();
+-		if (!Config.HLE && !Config.SlowBoot) {
+-			// skip BIOS logos
+-			psxRegs.pc = psxRegs.GPR.n.ra;
+-		}
+-	}
  
  	input_poll_cb();
  
 -- 
-2.17.1
+2.20.1
 

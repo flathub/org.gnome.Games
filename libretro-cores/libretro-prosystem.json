@@ -15,9 +15,9 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/libretro/prosystem-libretro/archive/463dfff97f2e7d707ee5ae238cb2e8e70beb585a.zip",
-                    "sha256": "cac7247080d7816881a1797eda27c0eaec3524191e8cc8b59665f726845954a0"
+                    "type": "git",
+                    "url": "https://github.com/libretro/prosystem-libretro",
+                    "commit": "d3c4796983d0758c7bb19249b3088f1973332d36"
                 },
                 {
                     "type": "file",

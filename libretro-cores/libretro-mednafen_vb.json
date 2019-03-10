@@ -15,9 +15,9 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/libretro/beetle-vb-libretro/archive/cc11960675aaef4bb9c8e50b8ada6c81d9044d96.zip",
-                    "sha256": "8ae0552f412ce3a3644fed70aa3a93815dba63694fde0865a34efdd4eb3c0fcf"
+                    "type": "git",
+                    "url": "https://github.com/libretro/beetle-vb-libretro",
+                    "commit": "00accc8a7c3482e5e464c5bb5f0679478024a0dc"
                 },
                 {
                     "type": "file",

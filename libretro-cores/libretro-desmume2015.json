@@ -20,9 +20,9 @@
             ],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/libretro/desmume2015/archive/5957aa07b1b8b60142cdcaccffa827316dc548d5.zip",
-                    "sha256": "71e7116b8be6766c6eb4ed35af574e29e0eda0b038de233b57f2009e9ee9d750"
+                    "type": "git",
+                    "url": "https://github.com/libretro/desmume2015",
+                    "commit": "79c66b62eb17e5d5f36aa888dbc0df386bb9426b"
                 },
                 {
                     "type": "file",
