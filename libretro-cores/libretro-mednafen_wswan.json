@@ -17,7 +17,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libretro/beetle-wswan-libretro",
-                    "commit": "ecada6655c6e6b53b27ee83a23523ecb89769625"
+                    "commit": "826f91f2e0960b2b68a27de7ad70a5d57043ebe7"
                 },
                 {
                     "type": "file",

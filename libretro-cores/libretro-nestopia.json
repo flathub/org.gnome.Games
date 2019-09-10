@@ -18,7 +18,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libretro/nestopia.git",
-                    "commit": "a12b967fef4c9948f4d30f6bb640d47a04824482"
+                    "commit": "e56a04ae23d928bb50b213642e4729608f69efb8"
                 },
                 {
                     "type": "file",
