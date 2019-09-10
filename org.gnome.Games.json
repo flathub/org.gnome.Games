@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.Games",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.32",
+    "runtime-version" : "3.34",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-games",
     "finish-args" : [
@@ -20,11 +20,6 @@
         /* Tracker access */
         "--talk-name=org.freedesktop.Tracker1",
         "--env=TRACKER_SPARQL_BACKEND=bus",
-        /* Needed for dconf to work */
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
         /* Needed to get the games info from The Games DB */
         "--share=network",
         /* Needed for joypads, until we have a proper portal */
@@ -34,7 +29,9 @@
         /* Needed to find the ROMs */
         "--filesystem=host:ro",
         /* Needed to find flatpaked Steam games */
-        "--filesystem=~/.var/app/com.valvesoftware.Steam:ro"
+        "--filesystem=~/.var/app/com.valvesoftware.Steam:ro",
+        /* Settings migration */
+        "--metadata=X-DConf=migrate-path=/org/gnome/Games/"
     ],
     "cleanup" : [
         "/include",
@@ -69,7 +66,7 @@
         "libretro-cores/libretro-nestopia.json",
         "libretro-cores/libretro-pcsx_rearmed.json",
         "libretro-cores/libretro-prosystem.json",
-        "libretro-cores/libretro-stella.json",
+        "libretro-cores/libretro-stella2014.json",
         /* End libretro cores */
         "shared-modules/lua5.3/lua-5.3.2.json",
         {
@@ -90,8 +87,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/tracker.git",
-                    "tag" : "2.2.1",
-                    "commit" : "c09ac0beda85498b365a89863a2cfb25b490202a"
+                    "tag" : "2.3.0",
+                    "commit" : "f56ccfde3b0a63375d6a4a664928b348c9ea45eb"
                 }
             ]
         },
@@ -108,8 +105,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/grilo.git",
-                    "tag" : "grilo-0.3.7",
-                    "commit" : "019a838f7752b42d9766e0f2f898ae0315666c3a"
+                    "tag" : "grilo-0.3.9",
+                    "commit" : "9a5951cfbe8776c609c0563e449f4f17518ae072"
                 }
             ],
             "cleanup" : [
@@ -151,8 +148,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/grilo-plugins.git",
-                    "tag" : "grilo-plugins-0.3.8",
-                    "commit" : "29dc976e010bfff6d0bfd92aae886944e8e708b8"
+                    "tag" : "grilo-plugins-0.3.9",
+                    "commit" : "0f3bce0fcf8b157ef0e6bdcc02c0fbb92f5a26b9"
                 }
             ],
             "cleanup" : [
@@ -166,8 +163,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.freedesktop.org/libevdev/libevdev.git",
-                    "tag" : "libevdev-1.6.0",
-                    "commit" : "f293c11fecd2d786f7742cb6768863d498b9d31b"
+                    "tag" : "libevdev-1.8.0",
+                    "commit" : "779749b22c0dd62cadf9e147c97c5a7675a92478"
                 }
             ]
         },
@@ -183,20 +180,23 @@
                 {
                     "type" : "git",
                     "url" : "https://source.puri.sm/Librem5/libhandy.git",
-                    "tag" : "v0.0.9",
-                    "commit" : "56b0aa62f6251ee19a88fc208b7ca8dcf9c9633c"
+                    "tag" : "v0.0.11",
+                    "commit" : "f5909a897f70143bdd2f89f47a63c1bf848330ce"
                 }
             ]
         },
         {
             "name" : "manette",
             "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dgudev=disabled"
+            ],
             "sources" : [
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/aplazas/libmanette.git",
-                    "tag" : "0.2.2",
-                    "commit" : "282927b98da8547e1ffb707874c8d368d2b9c0df"
+                    "tag" : "0.2.3",
+                    "commit" : "8aacdcbcbf37d0e48a04ffc7dde11acb50ee628b"
                 }
             ]
         },
@@ -207,8 +207,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/retro-gtk.git",
-                    "tag" : "0.16.1",
-                    "commit" : "8053f95f24611b13ccbb3c6378d379747e43fcb1"
+                    "tag" : "0.18.0",
+                    "commit" : "62183dc603184c9ac4b895b0146b27f363140421"
                 }
             ]
         },
@@ -222,8 +222,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-games.git",
-                    "tag" : "3.32.1",
-                    "commit" : "74197ed355e072dd9604a74b3c65011ea8b29341"
+                    "tag" : "3.34.0",
+                    "commit" : "d6e511a9b9d451ce6755fff19390ae9880585896"
                 }
             ]
         }

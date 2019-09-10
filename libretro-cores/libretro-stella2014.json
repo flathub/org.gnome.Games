@@ -1,5 +1,5 @@
         {
-            "name": "libretro-stella",
+            "name": "libretro-stella2014",
             "no-autogen": true,
             "make-args": [
                 "prefix=/app",
@@ -11,17 +11,17 @@
             ],
             "post-install": [
                 "mkdir -p /app/lib/libretro/",
-                "install -m644 -p stella.libretro /app/lib/libretro/"
+                "install -m644 -p stella2014.libretro /app/lib/libretro/"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/libretro/stella-libretro",
-                    "commit": "b0b63615fc2c7a30470fc1ac31ffdc18fdf4518b"
+                    "url": "https://github.com/libretro/stella2014-libretro",
+                    "commit": "a181878b283fc02c26c0474c41bde418c052c853"
                 },
                 {
                     "type": "file",
-                    "path": "stella.libretro"
+                    "path": "stella2014.libretro"
                 }
             ]
         }

@@ -1,8 +1,8 @@
 [Libretro]
 Type=Emulator
 Version=1.0
-Name=Stella
-Module=stella_libretro.so
+Name=Stella 2014
+Module=stella2014_libretro.so
 LibretroVersion=1
 Authors=Stephen Anthony;Bradford Mott;Eckhard Stolberg;Brian Watson;
 License=GPL-2.0+;
