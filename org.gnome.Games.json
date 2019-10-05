@@ -204,7 +204,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-games.git",
-                    "commit" : "fc9a963cce0bd9d04e93f48d04cefe1df1990c94"
+                    "tag" : "3.34.1",
+                    "commit" : "78f276032a12f2f9254ef2cf70eda57a4e66e3c1"
                 }
             ]
         }
