@@ -70,8 +70,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/tracker.git",
-                    "tag" : "2.3.0",
-                    "commit" : "f56ccfde3b0a63375d6a4a664928b348c9ea45eb"
+                    "tag" : "2.3.1",
+                    "commit" : "d4a09db73fab92178a64ce5e06e8c6f70312673e"
                 }
             ]
         },
@@ -204,8 +204,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-games.git",
-                    "tag" : "3.34.1",
-                    "commit" : "78f276032a12f2f9254ef2cf70eda57a4e66e3c1"
+                    "tag" : "3.34.2",
+                    "commit" : "caf7bae8284d4ad102a07bd2dcb3d81ef5456d54"
                 }
             ]
         }
