@@ -5,8 +5,6 @@
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-games",
     "finish-args" : [
-        "--extension=org.gnome.Games.LibretroPlugin=directory=lib/libretro/extra.d",
-        "--extension=org.gnome.Games.LibretroPlugin=subdirectories",
         "--share=ipc",
         "--socket=x11",
         "--socket=wayland",
@@ -21,6 +19,15 @@
         "--filesystem=~/.var/app/com.valvesoftware.Steam:ro",
         "--metadata=X-DConf=migrate-path=/org/gnome/Games/"
     ],
+    "add-extensions": {
+        "org.gnome.Games.LibretroPlugin": {
+            "version": "stable",
+            "directory": "lib/libretro/extra.d",
+            "subdirectories": true,
+            "no-autodownload": true,
+            "autodelete": true
+        }
+    },
     "cleanup" : [
         "/include",
         "/lib/pkgconfig",
