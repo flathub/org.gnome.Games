@@ -17,7 +17,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libretro/prosystem-libretro",
-                    "commit": "108d9950881d487a7215c045e7cb2c30824ac286"
+                    "commit": "6f7e34aea89db5ba2fbf674e5ff0ad6fc68a198e"
                 },
                 {
                     "type": "file",

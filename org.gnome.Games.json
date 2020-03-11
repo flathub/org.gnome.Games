@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.Games",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.34",
+    "runtime-version" : "3.36",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-games",
     "finish-args" : [
@@ -58,6 +58,13 @@
         "libretro-cores/libretro-pcsx_rearmed.json",
         "libretro-cores/libretro-prosystem.json",
         "libretro-cores/libretro-stella2014.json",
+        {
+            "name" : "libretro-extra",
+            "buildsystem" : "simple",
+            "build-commands": [
+                "mkdir -p /app/lib/libretro/extra.d"
+            ]
+        },
         "shared-modules/lua5.3/lua-5.3.5.json",
         {
             "name" : "tracker",
@@ -77,8 +84,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/tracker.git",
-                    "tag" : "2.3.1",
-                    "commit" : "d4a09db73fab92178a64ce5e06e8c6f70312673e"
+                    "tag" : "2.3.4",
+                    "commit" : "1fab9a0bf547cc2d12b743b53f0df8423d36e83d"
                 }
             ]
         },
@@ -95,8 +102,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/grilo.git",
-                    "tag" : "grilo-0.3.10",
-                    "commit" : "ec6a37b7474010e60a8949b8e7a38f828e3b005e"
+                    "tag" : "grilo-0.3.12",
+                    "commit" : "cb5a21f9999891ceda53804b83d2583598662c59"
                 }
             ],
             "cleanup" : [
@@ -108,7 +115,6 @@
             "name" : "grilo-plugins",
             "buildsystem" : "meson",
             "config-opts" : [
-                "-Denable-goa=no",
                 "-Denable-filesystem=no",
                 "-Denable-optical-media=no",
                 "-Denable-youtube=no",
@@ -152,8 +158,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.freedesktop.org/libevdev/libevdev.git",
-                    "tag" : "libevdev-1.8.0",
-                    "commit" : "779749b22c0dd62cadf9e147c97c5a7675a92478"
+                    "tag" : "libevdev-1.9.0",
+                    "commit" : "468760ba11438734912f793b1de00cb0f243497f"
                 }
             ]
         },
@@ -169,8 +175,8 @@
                 {
                     "type" : "git",
                     "url" : "https://source.puri.sm/Librem5/libhandy.git",
-                    "tag" : "v0.0.11",
-                    "commit" : "f5909a897f70143bdd2f89f47a63c1bf848330ce"
+                    "tag" : "v0.0.13",
+                    "commit" : "7a193d7692c9c76a1a94f17c4d30b585f77d177c"
                 }
             ]
         },
@@ -196,8 +202,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/retro-gtk.git",
-                    "tag" : "0.18.0",
-                    "commit" : "62183dc603184c9ac4b895b0146b27f363140421"
+                    "tag" : "0.18.1",
+                    "commit" : "08e84543076364ca1d2141a9bdb7d85940b7c8f4"
                 }
             ]
         },
@@ -211,8 +217,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-games.git",
-                    "tag" : "3.34.2",
-                    "commit" : "caf7bae8284d4ad102a07bd2dcb3d81ef5456d54"
+                    "commit" : "2183004e6892ffa46ff303e8a163fb614421d42f"
                 }
             ]
         }
