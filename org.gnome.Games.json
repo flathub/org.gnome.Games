@@ -190,8 +190,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/aplazas/libmanette.git",
-                    "tag" : "0.2.3",
-                    "commit" : "8aacdcbcbf37d0e48a04ffc7dde11acb50ee628b"
+                    "commit" : "6178d1725db083070794bf0a587578aa33a5d233"
                 }
             ]
         },
@@ -217,7 +216,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-games.git",
-                    "commit" : "c677e83fc831f7e0e8d431dbdd196b1a6db677c2"
+                    "tag" : "3.36.1",
+                    "commit" : "783ff8ee1d38bedbb1f4d50c369c33ba55749be9"
                 }
             ]
         }
