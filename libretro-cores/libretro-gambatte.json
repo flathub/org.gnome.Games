@@ -17,7 +17,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libretro/gambatte-libretro.git",
-                    "commit": "132f36e990dfc6effdafa6cf261373432464f9bf"
+                    "commit": "21547dc439675a7ae70c99baf09caeca72c40ce7"
                 },
                 {
                     "type": "file",
