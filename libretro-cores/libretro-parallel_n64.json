@@ -1,10 +1,10 @@
         {
-            "name": "libretro-pcsx_rearmed",
+            "name": "libretro-parallel_n64",
             "skip-arches": [
+                "aarch64",
                 "arm"
             ],
             "no-autogen": true,
-            "rm-configure": true,
             "make-args": [
                 "--makefile=Makefile.install",
                 "prefix=/app"
@@ -15,22 +15,22 @@
             ],
             "post-install": [
                 "mkdir -p /app/lib/libretro/",
-                "install -m644 -p pcsx_rearmed.libretro /app/lib/libretro/"
+                "install -m644 -p parallel_n64.libretro /app/lib/libretro/"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/libretro/pcsx_rearmed",
-                    "commit": "27914208797bcb529fdbe09933cd5ce2e095567a"
+                    "url": "https://github.com/libretro/parallel-n64",
+                    "commit": "7868eea1cee1798836a13623b86948fdc76c0ac1"
                 },
                 {
                     "type": "file",
-                    "path": "pcsx_rearmed-Makefile.install",
+                    "path": "parallel_n64-Makefile.install",
                     "dest-filename": "Makefile.install"
                 },
                 {
                     "type": "file",
-                    "path": "pcsx_rearmed.libretro"
+                    "path": "parallel_n64.libretro"
                 }
             ]
         }
