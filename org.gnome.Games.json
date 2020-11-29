@@ -194,9 +194,9 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/aplazas/libmanette.git",
-                    "tag" : "0.2.5",
-                    "commit" : "77d2c2c9fab2a8e08aead23f3ea059ad5d38f005"
+                    "url" : "https://gitlab.gnome.org/GNOME/libmanette.git",
+                    "tag" : "0.2.6",
+                    "commit" : "f3fc99a3582845725dc3f56fe7ffdc1ae3019d0f"
                 }
             ]
         },
