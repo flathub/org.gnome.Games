@@ -207,8 +207,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/retro-gtk.git",
-                    "tag" : "1.0.0",
-                    "commit" : "ba822685c572819253bc919fb21aea09ad2cbfee"
+                    "tag" : "1.0.1",
+                    "commit" : "b5a8aaa36fab720e65b271e336333ded803a9121"
                 }
             ]
         },
