@@ -1,0 +1,44 @@
+        {
+            "name": "libretro-citra",
+            "buildsystem": "cmake",
+            "builddir": true,
+            "config-opts": [
+                "-DENABLE_LIBRETRO=1",
+                "-DLIBRETRO_STATIC=1",
+                "-DENABLE_SDL2=0",
+                "-DENABLE_QT=0",
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DENABLE_WEB_SERVICE=0"
+            ],
+            "make-args": [
+                "citra_libretro"
+            ],
+            "post-install": [
+                /* TODO: Send that upstream */
+                "mkdir -p /app/lib/libretro/",
+                "install -m644 -p src/citra_libretro/citra_libretro.so /app/lib/libretro/"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/libretro/citra.git",
+                    "commit": "d74099c336a379ab4e197c2312a33126668e7bb6"
+                }
+            ],
+            "modules" : [
+                {
+                    "name" : "libretro-citra-descriptor",
+                    "buildsystem": "simple",
+                    "build-commands" : [
+                        "mkdir -p /app/lib/libretro/",
+                        "install -m644 -p citra.libretro /app/lib/libretro/"
+                    ],
+                    "sources" : [
+                        {
+                            "type": "file",
+                            "path": "citra.libretro"
+                        }
+                    ]
+                }
+            ]
+        }

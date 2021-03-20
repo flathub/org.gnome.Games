@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.Games",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "3.38",
+    "runtime-version" : "40",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-games",
     "finish-args" : [
@@ -44,8 +44,11 @@
     ],
     "modules" : [
         "shared-modules/lua5.3/lua-5.3.5.json",
+        "libretro-cores/libretro-blastem.json",
         "libretro-cores/libretro-bsnes-mercury.json",
+        "libretro-cores/libretro-citra.json",
         "libretro-cores/libretro-desmume2015.json",
+        "libretro-cores/libretro-flycast.json",
         "libretro-cores/libretro-gambatte.json",
         "libretro-cores/libretro-gearsystem.json",
         "libretro-cores/libretro-handy.json",
@@ -163,25 +166,8 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.freedesktop.org/libevdev/libevdev.git",
-                    "tag" : "libevdev-1.9.1",
-                    "commit" : "bcb79eed391d06fc4e75a39d19da91b41ff344ea"
-                }
-            ]
-        },
-        {
-            "name" : "libhandy",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "-Dtests=false",
-                "-Dexamples=false",
-                "-Dglade_catalog=disabled"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libhandy.git",
-                    "tag" : "1.0.0",
-                    "commit" : "94313c206258860b2428712e7ece1d02c5177857"
+                    "tag" : "libevdev-1.11.0",
+                    "commit" : "8855f1ac59a69d5bdff51e3f8980697f0127c270"
                 }
             ]
         },
@@ -219,8 +205,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-games.git",
-                    "tag" : "3.38.0",
-                    "commit" : "d23a495c900ee59ca4853c872cdef942b509cf83"
+                    "commit" : "7b4066c9b28490f1a1f1fae7c20efed49064baa0"
                 }
             ]
         }

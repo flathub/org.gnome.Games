@@ -1,0 +1,11 @@
+[Libretro]
+Type=Emulator
+Version=1.0
+Name=Citra
+Module=citra_libretro.so
+LibretroVersion=1
+Authors=Citra Emulation Project;
+License=GPL-2.0+;
+
+[Platform:Nintendo3DS]
+MimeType=application/x-nintendo-3ds-rom;application/x-nintendo-3ds-executable;

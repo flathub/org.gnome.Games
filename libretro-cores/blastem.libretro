@@ -1,0 +1,11 @@
+[Libretro]
+Type=Emulator
+Version=1.0
+Name=BlastEm
+Module=blastem_libretro.so
+LibretroVersion=1
+Authors=Mike Pavone;
+License=GPL-3.0+;
+
+[Platform:SegaGenesis]
+MimeType=application/x-genesis-rom;

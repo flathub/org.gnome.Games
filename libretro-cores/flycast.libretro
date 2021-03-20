@@ -1,0 +1,11 @@
+[Libretro]
+Type=Emulator
+Version=1.0
+Name=Flycast
+Module=flycast_libretro.so
+LibretroVersion=1
+Authors=flyinghead;
+License=GPL-2.0;
+
+[Platform:Dreamcast]
+MimeType=application/x-discjuggler-cd-image;application/x-gd-rom-cue;

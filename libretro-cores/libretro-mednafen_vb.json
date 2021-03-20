@@ -17,7 +17,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libretro/beetle-vb-libretro",
-                    "commit": "489dd5d00547e3eb929611ae57dfcb7bbda23022"
+                    "commit": "0b4cdd2286076e677264828618dec411adb70c90"
                 },
                 {
                     "type": "file",
