@@ -17,7 +17,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libretro/stella2014-libretro",
-                    "commit": "fc87f2c78d3b177f4b9b19698557dce452ac3ce7"
+                    "commit": "138b9709e0b1687826eba6a92eed8a0b04a56ee2"
                 },
                 {
                     "type": "file",

@@ -19,7 +19,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libretro/bsnes-mercury.git",
-                    "commit": "4a382621da58ae6da850f1bb003ace8b5f67968c"
+                    "commit" : "4a382621da58ae6da850f1bb003ace8b5f67968c"
                 },
                 {
                     "type": "file",

@@ -1,0 +1,4 @@
+include Makefile
+
+install: flycast_libretro.so
+	install -Dp -m755 flycast_libretro.so $(DESTDIR)$(prefix)/lib/libretro/flycast_libretro.so

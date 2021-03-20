@@ -1,5 +1,5 @@
         {
-            "name": "libretro-parallel_n64",
+            "name": "libretro-flycast",
             "skip-arches": [
                 "aarch64",
                 "arm"
@@ -14,23 +14,24 @@
                 "prefix=/app"
             ],
             "post-install": [
+                /* TODO: Send that upstream */
                 "mkdir -p /app/lib/libretro/",
-                "install -m644 -p parallel_n64.libretro /app/lib/libretro/"
+                "install -m644 -p flycast.libretro /app/lib/libretro/"
             ],
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/libretro/parallel-n64",
-                    "commit": "133c655bfcec8e3105ea4d1fc028c6d2ba9e4cdb"
+                    "url": "https://github.com/libretro/flycast",
+                    "commit": "3151a18da5c4bbf26c174299d68699c47ea2bf1a"
                 },
                 {
                     "type": "file",
-                    "path": "parallel_n64-Makefile.install",
+                    "path": "flycast-Makefile.install",
                     "dest-filename": "Makefile.install"
                 },
                 {
                     "type": "file",
-                    "path": "parallel_n64.libretro"
+                    "path": "flycast.libretro"
                 }
             ]
         }
