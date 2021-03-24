@@ -1,0 +1,26 @@
+        {
+            "name": "libretro-dolphin",
+            "buildsystem": "cmake",
+            "config-opts": [
+                "-DLIBRETRO=ON",
+                "-DLIBRETRO_STATIC=1",
+                "-DENABLE_QT=0",
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "no-make-install": true,
+            "post-install": [
+                "mkdir -p /app/lib/libretro/",
+                "install -m644 -p dolphin_libretro.so /app/lib/libretro/",
+                "install -m644 -p dolphin.libretro /app/lib/libretro/"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/libretro/dolphin.git"
+                },
+                {
+                    "type": "file",
+                    "path": "dolphin.libretro"
+                }
+            ]
+        }

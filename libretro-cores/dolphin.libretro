@@ -1,0 +1,11 @@
+[Libretro]
+Type=Emulator
+Version=1.0
+Name=Dolphin
+Module=dolphin_libretro.so
+LibretroVersion=1
+Authors=Team Dolphin;
+License=GPL-2.0+;
+
+[Platform:GameCube]
+MimeType=application/x-gamecube-rom;

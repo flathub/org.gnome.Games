@@ -48,6 +48,7 @@
         "libretro-cores/libretro-bsnes-mercury.json",
         "libretro-cores/libretro-citra.json",
         "libretro-cores/libretro-desmume2015.json",
+        "libretro-cores/libretro-dolphin.json",
         "libretro-cores/libretro-flycast.json",
         "libretro-cores/libretro-gambatte.json",
         "libretro-cores/libretro-gearsystem.json",
@@ -206,6 +207,19 @@
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/gnome-games.git",
                     "commit" : "7b4066c9b28490f1a1f1fae7c20efed49064baa0"
+                }
+            ]
+        },
+        {
+            "name" : "gnome-games-dolphin",
+            "buildsystem" : "simple",
+            "build-commands": [
+                "install -m644 -p dolphin.options /app/share/gnome-games/options/"
+            ],
+            "sources" : [
+                {
+                    "type" : "file",
+                    "path" : "dolphin.options"
                 }
             ]
         }
