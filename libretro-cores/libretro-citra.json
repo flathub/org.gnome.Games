@@ -22,7 +22,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libretro/citra.git",
-                    "commit": "d74099c336a379ab4e197c2312a33126668e7bb6"
+                    "commit": "5d1b3063383c0df46d286a108939bf5441549a29"
                 }
             ],
             "modules" : [
