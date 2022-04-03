@@ -27,7 +27,7 @@
                 {
                     "type": "file",
                     "path": "desmume2015.libretro",
-                    "dest-filename": "desmume/desmume2015.libretro"
+                    "dest": "desmume"
                 }
             ]
         }

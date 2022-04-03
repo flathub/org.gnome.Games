@@ -23,7 +23,7 @@
                 {
                     "type": "file",
                     "path": "nestopia.libretro",
-                    "dest-filename": "libretro/nestopia.libretro"
+                    "dest": "libretro"
                 }
             ]
         }

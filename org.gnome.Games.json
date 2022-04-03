@@ -1,7 +1,7 @@
 {
     "app-id" : "org.gnome.Games",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "40",
+    "runtime-version" : "42",
     "sdk" : "org.gnome.Sdk",
     "command" : "gnome-games",
     "finish-args" : [
