@@ -21,7 +21,6 @@
                 {
                     "type": "git",
                     "url": "https://github.com/libretro/blastem.git",
-                    "branch": "libretro",
                     "commit": "e70b05bf5b5954140cba227fc996ab24c064d494"
                 },
                 {
