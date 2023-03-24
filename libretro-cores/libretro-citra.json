@@ -1,6 +1,6 @@
         {
             "name": "libretro-citra",
-            "buildsystem": "cmake",
+            "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
                 "-DENABLE_LIBRETRO=1",
