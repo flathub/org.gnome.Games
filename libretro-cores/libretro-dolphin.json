@@ -1,6 +1,6 @@
         {
             "name": "libretro-dolphin",
-            "buildsystem": "cmake",
+            "buildsystem": "cmake-ninja",
             "config-opts": [
                 "-DLIBRETRO=ON",
                 "-DLIBRETRO_STATIC=1",
@@ -16,7 +16,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/libretro/dolphin.git"
+                    "url": "https://github.com/libretro/dolphin.git",
+                    "commit": "6a0b6ee8a4d5363e669f5faf43abc8f17e4278a8"
                 },
                 {
                     "type": "file",
